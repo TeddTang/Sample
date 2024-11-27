@@ -1,0 +1,147 @@
+/* src/styles/LoginPopup.scss */
+
+.popup-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #D4D4D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    .popup_header {
+        span {
+            padding-left: 24px;
+        }
+    }
+}
+
+.popup {
+    background: white;
+    padding: 24px 56px 48px 56px;
+    border-radius: 12px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0px 56px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.popup {
+    &_header {
+        display: flex;
+        align-items: center;
+        span {
+            width: 100%;
+            text-align: center;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+        }
+        
+    }
+    &_context {
+        font-family: "Noto Sans TC";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        width: 100%;
+        text-align: center;
+        color: $color-gray-2;
+        margin-top: 8px;
+        border-bottom: 1px solid $color-gray;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+    &_status {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 32px;
+        img {
+            width: 80px;
+        }
+        div {
+            border: none;
+        }
+    }
+}
+
+.upload_field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+    img {
+        margin-bottom: 32px;
+        &.uploaded-photo {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            cursor: pointer;
+        }
+        &.default-photo {
+            height: auto;
+            cursor: pointer;
+        }
+    }
+    span {
+        color: $color-red;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: calc( 100% - 6px);
+        border-radius: 8px;
+    }
+    &_title {
+        font-size: 16px;
+        color: $color-blue;
+        margin-bottom: 8px;
+    }
+    &_example {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 12px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid $color-gray;
+    }
+    &_group {
+        display: flex;
+        column-gap: 12px;
+    }
+}

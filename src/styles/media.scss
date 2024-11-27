@@ -1,0 +1,35 @@
+@media screen and (max-width: 580px) {
+    .footer {
+        &_block {
+            grid-template-columns: 1fr;
+            margin: 0px 48px;
+            .line {
+                visibility: hidden;
+            }
+            span:first-child {
+                text-align: center;
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    background-color: rgba(174, 174, 174, 0.5);
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+    .vote {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+}
+
+// @media screen and (max-width: 4500px) {
+//     .btn-group {
+//         display: grid;
+//         grid-template-columns: 1fr;
+//         row-gap: 40px;
+//     }
+// }

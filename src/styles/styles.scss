@@ -1,0 +1,604 @@
+@import "./color.scss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import "./Popup.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+html {
+    background-color: $color-white;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #F1F1F1;
+}
+
+// h1 {
+//     color: #FFF;
+//     font-family: Inter;
+//     font-size: 32px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+// }
+
+.main {
+    height: 100%;
+}
+
+.banner {
+    position: relative;
+    img {
+        width: 100%;
+    }
+}
+
+.container {
+    display: flex;
+}
+
+.footer {
+    background-color: #0D0B25;
+    color: $color-white;
+    font-family: "Noto Sans TC";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding: 48px 0;
+    &_block {
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+        column-gap: 20px;
+        justify-content: center;
+        align-items: center;
+        max-width: 1240px;
+        margin: 0px 24px;
+        span {
+            margin: auto;
+            max-width: 360px;
+        }
+    }
+}
+
+.line {
+    width: 1px;
+    height:64px;
+    flex-shrink: 0;
+    background-color: rgba(174, 174, 174, 0.5);
+    
+}
+
+.box1{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 100%;
+
+}
+
+.t32, .t48, .t24, .t30 {
+    color: $color-black;
+}
+
+@mixin t32 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.t32 {
+    @include t32;
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
+
+.t30 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.t48 {
+    font-family: "Noto Sans TC";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.t24 {
+    font-family: "Noto Sans TC";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.t18 {
+    font-family: "Noto Sans TC";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    color: #515151;
+}
+
+.t14 {
+    font-family: "Noto Sans TC";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.rol {
+    display: block;
+    text-align: center;
+    height: 49%;
+}
+
+.rol2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    height: 49%;
+}
+
+.btn {
+    &-hidden {
+        width: 30%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin: auto;
+    }
+    &-group {
+        display: flex;
+        column-gap: 48px;
+    }
+    &-style1 {
+        width: 160px;
+        height: 48px;
+        font-weight: 600;
+        color: $color-white;
+        border-radius: 16px;
+        background: linear-gradient(97deg, #FE747C 7.81%, #2845C1 91.07%);
+    }
+    &-style2 {
+        padding: 0px 20px;
+        height: 40px;
+        font-weight: 600;
+        color: $color-white;
+        border-radius: 8px;
+        background: $color-blue;
+    }
+    &-style3 {
+        width: 100%;
+        height: 48px;
+        font-weight: 600;
+        color: $color-white;
+        border-radius: 12px;
+        background: $color-blue;
+    }
+    &-outline {
+        font-weight: 400;
+        color: $color-red;
+        border: 1px solid $color-red;
+        border-radius: 12px;
+        background-color: transparent;
+        width: 100%;
+        height: 48px;
+    }
+}
+
+.pr32 {
+    margin-right: 10%;
+}
+
+.hint {
+    position: absolute;
+    top: 50%; /* 調整文字出現的位置 */
+    left: 50%; /* 調整文字出現的位置 */
+    transform: translate(-50%, -50%); /* 使文字居中 */
+    background-color: rgba(0, 0, 0, 0.7); /* 黑色背景，透明度70% */
+    color: white; /* 白色文字 */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+@mixin vote {
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    padding: 16px;
+    img {
+        width: 100%;
+    }
+}
+
+.vote {
+    display: flex;
+    column-gap: 5%;
+    &_kfc {
+        @include vote;
+        border: 1px solid $color-red;
+    }
+    &_pizza {
+        @include vote;
+        border: 1px solid $color-blue;
+    }
+    &_text {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0px 8px;
+        margin-top: 12px;
+    }
+    &_title {
+        display: flex;
+        align-items: center;
+        margin-top: 32px;
+        margin-bottom: 24px;
+    }
+    &_detail {
+        display: flex;
+        flex-direction: column;
+        border-radius: 24px;
+        padding: 16px;
+        border: 1px solid $color-gray;
+    }
+    &_block:nth-child(n):not(:last-child) {
+        width: 100%;
+        border-bottom: 1px solid $color-gray;
+        img {
+            margin-bottom: 8px;
+        }
+    }
+    &_block:nth-child(n+2) {
+        img {
+            margin-top: 16px;
+        }
+    }
+}
+
+.info {
+    border: 1px solid $color-gray;
+    width: calc(100% - 64px);
+    border-radius: 24px;
+    padding: 24px 32px 24px 32px;
+    &_block {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        
+        &:nth-child(n):not(:last-child) {
+            border-bottom: 1px solid $color-gray;
+            margin-bottom: 24px;
+        padding-bottom: 24px;
+        }
+    }
+}
+
+
+.kfc_amount {
+    color: $color-red;
+    @include t32;
+}
+
+.pizza_amount {
+    color: $color-blue;
+    @include t32;
+}
+
+.red_block {
+    width: 8px;
+    height: 24px;
+    margin-right: 8px;
+    background-color: $color-red;
+}
+
+.blue_block {
+    width: 8px;
+    height: 24px;
+    margin-right: 8px;
+    background-color: $color-blue;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    list-style-type: decimal;
+}
+
+.input {
+    &_style {
+        margin-top: 4px;
+        width: calc(100% - 32px);
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid $color-gray-light;
+        background-color: $color-white;
+        padding-left:16px;
+        padding-right: 16px;
+        margin-bottom: 20px;
+        &-psw {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4px;
+            width: calc(100% - 32px);
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid $color-gray-light;
+            background-color: $color-white;
+            padding-left:16px;
+            padding-right: 16px;
+            margin-bottom: 32px;
+            > input {
+                border: none;
+                width: 100%;
+            }
+            > img {
+                width: 24px;
+            }
+            &:focus-within {
+                border-color: $color-blue;
+            }
+        }
+    }
+    &_title {
+        color: $color-black;
+    }
+}
+
+
+input {
+    font-size: 15px;
+    color: $color-black;
+}
+
+input::placeholder {
+    color: $color-gray-light;
+}
+
+input:focus {
+    border-color: $color-blue;
+    outline: none;
+}
+
+.input-error {
+    border: 1px solid red;
+}
+
+
+.error-message {
+    font-family: "Noto Sans TC";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: $color-red;
+    text-align: center;
+    margin-bottom: 32px
+}
+
+// vote
+
+.vote {
+    &_header {
+        display: flex;
+        width: calc(100% - 80px);
+        height: 72px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 40px;
+        margin: 40px 0px;
+        border-radius: 100px;
+        background: var(--G, linear-gradient(90deg, #FE747C 0%, #2845C1 100%));
+        span {
+            color: $color-white;
+            font-size: 600;
+        }
+    }
+    &_container {
+        width: 100%;
+    }
+    &_list {
+        width: 100%;
+        height: 100%;
+        max-width: 245px;
+        max-height:324px;
+        border: 1px solid $color-gray;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &_text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 40px);
+        button {
+            width: 100%;
+            margin-bottom: 16px
+        }
+        span {
+            color: $color-red;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: $color-blue;
+    height: 160px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 213px;
+    background-color: $color-white;
+    height: calc(100vh - 48px);
+    border-right: 1px solid #DCDCDC;
+    padding-bottom: 48px;
+    &_pages {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex: 1;
+        margin-top: 40px;
+        width: 100%;
+        span {
+            padding-left: 32px;
+            line-height: 24px;
+            margin-bottom: 32px;
+            cursor: pointer;
+        }
+    }
+}
+
+.logout {
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    color: $color-red;
+}
+
+.t18.active {
+    color: $color-blue;
+    font-weight: 500;
+    border-right: 3px solid $color-blue;
+}
+
+.content {
+    width: calc(100% - 213px);
+    &_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 38px 40px 20px 40px;
+        span {
+            margin: 0;
+        }
+    }
+    &_main {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-white;
+        border: 1px solid #dcdcdc;
+        margin: 0px 40px 40px 40px;
+        border-radius: 8px;
+        height: calc(100vh - 150px);
+    }
+}
+
+ul {
+    padding: 0;
+}
+
+
+
+li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    min-height: 56px;
+    border-bottom: 1px solid #E6E6E6;
+    label {
+        flex: 1;
+        padding-left: 24px;
+    }
+    span{
+        flex: 1;
+    }
+    section{
+        flex: 1;
+    }
+}
+
+li:last-child {
+    border: none;
+}
+
+.list_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 56px;
+    background-color: $color-black;
+    border-radius: 8px 8px 0 0;
+    height: 48px;
+    color: $color-white;
+    font-family: "Noto Sans TC";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    span {
+        flex: 1;
+    }
+    span:first-child {
+        padding-left: 20px
+    }
+    span:nth-child(2) {
+        margin-right: 40px;
+    }
+}
+
+.reviewed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 48px;
+    color: $color-blue;
+    border: 1px solid $color-blue;
+    border-radius: 16px;
+}
+
+.not-reviewed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 48px;
+    color: $color-gray;
+    border: 1px solid $color-gray;
+    border-radius: 16px;
+}
+
+.empty-space {
+    width: 16px; 
+}
+
+@import "./media.scss";
